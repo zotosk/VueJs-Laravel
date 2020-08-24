@@ -1,11 +1,45 @@
-$header-color : gray;
-$background : #f3f3f3;
+//font-family
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
-body {
-    font-family: sans-serif;
+//defined colors
+$header-color : #3a3a3a;
+$background : #fcfcfc;
+$product-name : #a928ff;
+
+//font weights
+$header-bold-font : 800;
+$header-medium-font : 600;
+$header-light-font : 400;
+
+//font size
+$header-product-size : 1.8em;
+
+body,
+html {
     background-color: $background;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-#my-list {
-    color: $header-color;
+#app {
+    display: flex;
+    justify-content: center;
+    flex-basis: 1;
+    justify-content: center;
+    height: 250px;
+
+    h1 {
+        color: $header-color;
+        font-weight: $header-bold-font;
+    }
+
+    span {
+        color: $product-name;
+        font-weight: $header-medium-font;
+        font-size: $header-product-size;
+    }
+
+    p.product-desc {
+        color: $header-color;
+        font-weight: $header-light-font;
+    }
 }

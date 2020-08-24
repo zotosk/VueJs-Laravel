@@ -1,8 +1,27 @@
-body {
-  font-family: sans-serif;
-  background-color: #f3f3f3;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+body,
+html {
+  background-color: #fcfcfc;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
-#my-list {
-  color: gray;
+#app {
+  display: flex;
+  justify-content: center;
+  flex-basis: 1;
+  justify-content: center;
+  height: 250px;
+}
+#app h1 {
+  color: #3a3a3a;
+  font-weight: 800;
+}
+#app span {
+  color: #a928ff;
+  font-weight: 600;
+  font-size: 1.8em;
+}
+#app p.product-desc {
+  color: #3a3a3a;
+  font-weight: 400;
 }
