@@ -12,19 +12,41 @@
 
 <body>
     <div id="app">
-        <h1>{{header.toLocaleUpperCase()}}</h1>
+        <h1>{{app_name.toLocaleUpperCase()}}</h1>
         <div class="container">
             <div class="product-image item">
-                <img v-bind:src="image" width="150">
+                <img v-bind:src="product_image" width="250">
+                <p>
+                    <a v-bind:href="product_link">Link</a>
+                </p>
             </div>
 
             <div class="product-header item">
-                <p>{{product_name}}</p>
+                <p class="prd-name">{{product_name}}</p>
+
+                <div class="product-desc">
+                    <a class="badge-link" href="#" title="Men's Workout &amp; Training Shirts">
+                        <i class="a-icon a-icon-addon p13n-best-seller-badge">#1 Best Seller</i>
+                        <span class="cat-name"> in Men's Workout &amp; Training Shirts</span>
+                    </a>
+                    <div>
+                        <small>{{product_description}} : </small>
+                        <span v-if="onSale">Product On Sale!</span>
+                        <span v-else>Product not available</span>
+                    </div>
+                    <p v-if="inventory > 10">In Stock</p>
+                    <p v-else-if=" inventory <=10 && inventory> 0">Almost sold out <strong>{{inventory}}</strong>
+                        left
+                    </p>
+                    <p v-else>Sold Out</p>
+                    <div>
+                        <ul>
+                            <li v-for="details in details">{{details}}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="product-desc item">
-                <p>{{product_description}}</p>
-            </div>
         </div>
     </div>
 

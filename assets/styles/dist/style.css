@@ -3,42 +3,51 @@ body,
 html {
   background-color: #fcfcfc;
   font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #app {
-  justify-content: center;
   display: block;
-  box-sizing: border-box;
   text-align: center;
+}
+#app h1 {
+  margin: 0;
+  padding: 1.4em;
+  background: #f3f3f3;
 }
 #app .container {
   padding: 2rem;
-  border: 1px solid gray;
   max-width: 1024px;
   width: 50%;
-  -webkit-box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
-  box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: -1px 2px 20px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: -1px 2px 20px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: -1px 2px 20px 0px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: space-between;
 }
 #app .container .item {
-  flex: 0 32%;
-  margin-bottom: 2%;
+  flex: 0 50%;
+  margin: 0 auto;
   /* (100-32*3)/2 */
 }
-#app h1 {
+#app .container .product-image img {
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+#app .product-header .prd-name {
   color: #3a3a3a;
   font-weight: 800;
-}
-#app .product-header {
   color: #a928ff;
   font-weight: 600;
   font-size: 1.8em;
+  text-align: left;
 }
-#app .product-desc {
+#app .product-header .product-desc {
   color: #3a3a3a;
   font-weight: 400;
+  text-align: left;
 }
