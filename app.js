@@ -3,7 +3,8 @@ var app = new Vue({
   data() {
     return {
       header: "Shopping list",
-      product_name: "Socks",
+      image: "/assets/img/tshirt-blue.jpg",
+      product_name: "T-Shirt",
       product_description: "lorem lorem lorem"
     };
   }

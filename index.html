@@ -13,9 +13,18 @@
 <body>
     <div id="app">
         <h1>{{header.toLocaleUpperCase()}}</h1>
-        <div class="wrap">
-            <p class="product-header">{{product_name}}</p>
-            <p class="product-desc">{{product_description}}</p>
+        <div class="container">
+            <div class="product-image item">
+                <img v-bind:src="image" width="150">
+            </div>
+
+            <div class="product-header item">
+                <p>{{product_name}}</p>
+            </div>
+
+            <div class="product-desc item">
+                <p>{{product_description}}</p>
+            </div>
         </div>
     </div>
 

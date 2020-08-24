@@ -6,16 +6,28 @@ html {
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
 }
-#app .wrap {
+#app .container {
+  padding: 2rem;
+  border: 1px solid gray;
   max-width: 1024px;
   width: 50%;
   -webkit-box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
   box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+#app .container .item {
+  flex: 0 32%;
+  margin-bottom: 2%;
+  /* (100-32*3)/2 */
 }
 #app h1 {
   color: #3a3a3a;
