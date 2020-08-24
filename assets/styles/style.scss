@@ -22,23 +22,29 @@ html {
 
 #app {
     display: flex;
-    justify-content: center;
-    flex-basis: 1;
-    justify-content: center;
-    height: 250px;
+    flex-direction: column;
+    align-items: center;
+
+    .wrap {
+        max-width: 1024px;
+        width: 50%;
+        -webkit-box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
+        -moz-box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
+        box-shadow: 9px 9px 2px -3px rgba(0, 0, 0, 0.07);
+    }
 
     h1 {
         color: $header-color;
         font-weight: $header-bold-font;
     }
 
-    span {
+    .product-header {
         color: $product-name;
         font-weight: $header-medium-font;
         font-size: $header-product-size;
     }
 
-    p.product-desc {
+    .product-desc {
         color: $header-color;
         font-weight: $header-light-font;
     }
