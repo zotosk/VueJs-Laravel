@@ -2,8 +2,8 @@
 
 ###  Vue Js Shopping app
 Updating states and rendering 
-
-```to-do
+### to-do
+```
 -cart
 -populate li items
 -crud
