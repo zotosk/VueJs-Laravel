@@ -13,9 +13,9 @@ html {
   text-align: center;
 }
 #app h1 {
+  padding: 50px;
   margin: 0;
-  padding: 1.4em;
-  background: #f3f3f3;
+  border-top: 5px solid #a928ff;
 }
 #app .container {
   padding: 2rem;
@@ -45,9 +45,47 @@ html {
   font-weight: 600;
   font-size: 1.8em;
   text-align: left;
+  margin-top: 0;
 }
 #app .product-header .product-desc {
   color: #3a3a3a;
   font-weight: 400;
   text-align: left;
+}
+#app .cart-btn {
+  outline-color: none;
+  border: none;
+  background-color: #4a68ff;
+  float: left;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 20px 35px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #272d66;
+}
+#app .cart-btn:hover {
+  background-color: #2f3fd6;
+}
+#app .cart-btn:active {
+  border: 0;
+  outline: none;
+  outline-color: none;
+}
+#app .add-to-cart {
+  background: #f3f3f3;
+  color: #3a3a3a;
+  box-shadow: none;
+  text-shadow: none;
+}
+#app .add-to-cart:hover {
+  background: #f3f3f3;
+  cursor: default;
+}
+#app .color-box {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  border-radius: 150px;
 }

@@ -12,13 +12,23 @@
 
 <body>
     <div id="app">
+
         <h1>{{app_name.toLocaleUpperCase()}}</h1>
         <div class="container">
             <div class="product-image item">
-                <img v-bind:src="product_image" width="250">
+                <img v-bind:src="product_image" width="250" height="250">
                 <p>
                     <a v-bind:href="product_link">Link</a>
                 </p>
+
+                <p>Colors</p>
+                <div style="display: inline-block;padding:5px; margin: 10px;" v-for="variant in variants"
+                    :key="variant.variantId" class="color-box" :style="{backgroundColor: variant.variantColor }"
+                    @mouseover="updateProduct(variant.variantImage)">
+
+                    <!-- <p> {{variant.variantId}}</p> -->
+
+                </div>
             </div>
 
             <div class="product-header item">
@@ -26,7 +36,7 @@
 
                 <div class="product-desc">
                     <a class="badge-link" href="#" title="Men's Workout &amp; Training Shirts">
-                        <i class="a-icon a-icon-addon p13n-best-seller-badge">#1 Best Seller</i>
+                        <i class="best-seller-badge">#1 Best Seller</i>
                         <span class="cat-name"> in Men's Workout &amp; Training Shirts</span>
                     </a>
                     <div>
@@ -44,8 +54,19 @@
                             <li v-for="details in details">{{details}}</li>
                         </ul>
                     </div>
+
+
+                    <strong>Sizes :</strong>
+                    <div v-for="size in sizes">
+                        <p>{{size}}</p>
+                    </div>
+                </div>
+                <button v-on:click="addToCart" :disabled="!inStock || !onSale" class="cart-btn">Add to Cart</button>
+                <div class="add-to-cart cart-btn">
+                    <p>Cart {{cart}}</p>
                 </div>
             </div>
+
 
         </div>
     </div>

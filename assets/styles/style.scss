@@ -1,23 +1,23 @@
 //font-family
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 
 //defined colors
-$header-color : #3a3a3a;
-$background : #fcfcfc;
-$product-name : #a928ff;
+$header-color: #3a3a3a;
+$background: #fcfcfc;
+$product-name: #a928ff;
 
 //font weights
-$header-bold-font : 800;
-$header-medium-font : 600;
-$header-light-font : 400;
+$header-bold-font: 800;
+$header-medium-font: 600;
+$header-light-font: 400;
 
 //font size
-$header-product-size : 1.8em;
+$header-product-size: 1.8em;
 
 body,
 html {
     background-color: $background;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,9 +28,9 @@ html {
     text-align: center;
 
     h1 {
+        padding: 50px;
         margin: 0;
-        padding: 1.4em;
-        background: #f3f3f3;
+        border-top: 5px solid $product-name;
     }
 
     .container {
@@ -66,6 +66,7 @@ html {
             font-weight: $header-medium-font;
             font-size: $header-product-size;
             text-align: left;
+            margin-top: 0;
         }
 
         .product-desc {
@@ -73,6 +74,49 @@ html {
             font-weight: $header-light-font;
             text-align: left;
         }
+    }
+
+    .cart-btn {
+        outline-color: none;
+        border: none;
+        background-color: #4a68ff;
+        float: left;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 15px;
+        padding: 20px 35px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #272d66;
+    }
+
+    .cart-btn:hover {
+        background-color: #2f3fd6;
+    }
+
+    .cart-btn:active {
+        border: 0;
+        outline: none;
+        outline-color: none;
+    }
+
+    .add-to-cart {
+        background: #f3f3f3;
+        color: $header-color;
+        box-shadow: none;
+        text-shadow: none;
+    }
+
+    .add-to-cart:hover {
+        background: #f3f3f3;
+        cursor: default;
+    }
+
+    .color-box {
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+        border-radius: 150px;
     }
 
 
