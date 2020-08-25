@@ -14,21 +14,21 @@
         <h1>{{app_name.toLocaleUpperCase()}}</h1>
         <div class="container">
             <div class="product-image item">
-                <img v-bind:src="product_image" width="250" height="250">
+                <img v-bind:src="image" width="250" height="250">
                 <p>
                     <a v-bind:href="product_link">Link</a>
                 </p>
 
                 <p>Colors</p>
-                <div style="display: inline-block;padding:5px; margin: 10px;" v-for="variant in variants"
+                <div style="display: inline-block;padding:5px; margin: 10px;" v-for="(variant, index ) in variants"
                     :key="variant.variantId" class="color-box" :style="{backgroundColor: variant.variantColor }"
-                    @mouseover="updateProduct(variant.variantImage)">
+                    @mouseover="updateProduct(index)">
                     <small style="position: relative; top: -25px;"> #{{variant.variantId}}</small>
                 </div>
             </div>
 
             <div class="product-header item">
-                <p class="prd-name">{{product_name}}</p>
+                <p class="prd-name">{{title}}</p>
                 <p style="text-align: left;">Product Code : {{product_code}}</p>
                 <div class="product-desc">
                     <a class="badge-link" href="#" title="Men's Workout &amp; Training Shirts">
