@@ -1,5 +1,7 @@
 # VueJs shopping cart
 
+<img src=img33.png>
+
 ### Vue Js Shopping app
 
 Updating states and rendering
