@@ -32,7 +32,6 @@ html {
 #app .container .item {
   flex: 0 50%;
   margin: 0 auto;
-  /* (100-32*3)/2 */
 }
 #app .container .product-image img {
   border: 1px solid lightgray;
@@ -59,7 +58,6 @@ html {
   float: left;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
   font-size: 15px;
   padding: 20px 35px;
   text-decoration: none;
@@ -78,6 +76,10 @@ html {
   color: #3a3a3a;
   box-shadow: none;
   text-shadow: none;
+  padding: 20px 35px;
+  margin-right: 10px;
+  float: right;
+  width: 100px;
 }
 #app .add-to-cart:hover {
   background: #f3f3f3;
@@ -88,4 +90,15 @@ html {
   height: 40px;
   margin-top: 5px;
   border-radius: 150px;
+}
+#app .disabledButton {
+  background: #f3f3f3;
+  color: #3a3a3a;
+  cursor: default;
+}
+#app .disabledButton:hover {
+  background: #f3f3f3;
+}
+#app .lineThrough {
+  text-decoration: line-through;
 }

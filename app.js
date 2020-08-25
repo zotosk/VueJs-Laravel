@@ -7,6 +7,7 @@ var app = new Vue({
       product_image: "/assets/img/tshirt-green.jpg",
       product_link: "#",
       product_name: "Under Armour Men's Tech 2.0 Short Sleeve T-Shirt",
+      product_code: '#00PRD34',
       product_description: "Product info",
       onSale: true,
       inStock: true,
@@ -28,6 +29,11 @@ var app = new Vue({
           variantId: 224,
           variantColor: "#f1c40f",
           variantImage: "/assets/img/tshirt-yellow.jpg"
+        },
+        {
+          variantId: "goku",
+          variantColor: "#ffd194",
+          variantImage: "/assets/img/tshirt-goku.jpg"
         }
       ],
       sizes: ["small", "medium", "large", "xxl"],

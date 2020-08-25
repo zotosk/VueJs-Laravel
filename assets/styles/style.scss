@@ -48,8 +48,6 @@ html {
         .item {
             flex: 0 50%;
             margin: 0 auto;
-            // margin-bottom: 2%;
-            /* (100-32*3)/2 */
         }
 
         .product-image img {
@@ -83,7 +81,6 @@ html {
         float: left;
         cursor: pointer;
         color: #ffffff;
-        font-family: Arial;
         font-size: 15px;
         padding: 20px 35px;
         text-decoration: none;
@@ -105,6 +102,10 @@ html {
         color: $header-color;
         box-shadow: none;
         text-shadow: none;
+        padding: 20px 35px;
+        margin-right: 10px;
+        float: right;
+        width: 100px;
     }
 
     .add-to-cart:hover {
@@ -119,5 +120,17 @@ html {
         border-radius: 150px;
     }
 
+    .disabledButton {
+        background: #f3f3f3;
+        color: $header-color;
+        cursor: default;
+    }
 
+    .disabledButton:hover {
+        background: #f3f3f3;
+    }
+
+    .lineThrough {
+        text-decoration: line-through;
+    }
 }

@@ -1,8 +1,11 @@
-# VueJs-Laravel
+# VueJs shopping cart
 
-###  Vue Js Shopping app
-Updating states and rendering 
+### Vue Js Shopping app
+
+Updating states and rendering
+
 ### to-do
+
 ```
 -cart
 -populate li items
@@ -10,6 +13,7 @@ Updating states and rendering
 -flexbox
 -paypal Api
 
-
-
 ```
+
+client-side
+-dynamic display actions
