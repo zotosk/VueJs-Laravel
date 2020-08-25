@@ -1,6 +1,6 @@
 # VueJs shopping cart
 
-<img src=img33.png>
+<img src=img33.PNG>
 
 ### Vue Js Shopping app
 
