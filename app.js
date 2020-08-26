@@ -1,6 +1,72 @@
-var app = new Vue({
-  el: "#app",
+Vue.component('product', {
+  props: {
+    premium: {
+      type: Boolean,
+      required: true
+    }
+  },
+  template: `
+    <section>
+        <div class="container">
+            <div class="product-image item">
+                <img v-bind:src="image" width="250" height="250">
+                <p>
+                    <a v-bind:href="product_link">Link</a>
+                </p>
 
+                <p>Colors</p>
+                <div style="display: inline-block;padding:5px; margin: 10px;" v-for="(variant, index ) in variants"
+                    :key="variant.variantId" class="color-box" :style="{backgroundColor: variant.variantColor }"
+                    @mouseover="updateProduct(index)">
+                    <small style="position: relative; top: -25px;"> #{{variant.variantId}}</small>
+                </div>
+            </div>
+
+            <div class="product-header item">
+                <p class="prd-name">{{title}}</p>
+                <p style="text-align: left;">Product Code : {{product_code}}</p>
+                <div class="product-desc">
+                    <a class="badge-link" href="#" title="Men's Workout &amp; Training Shirts">
+                        <i class="best-seller-badge">#1 Best Seller</i>
+                        <span class="cat-name"> in Men's Workout &amp; Training Shirts</span>
+                    </a>
+                    <div>
+                        <small>{{product_description}} : </small>
+                        <span v-if="onSale">Product On Sale!</span>
+                        <span v-else style="color:red;">Product not available</span>
+                        <p>Shipping : {{ shipping }}</p>
+                    </div>
+                    <p v-if="inventory > 10" :class="{lineThrough: !onSale}">In Stock</p>
+                    <p v-else-if=" inventory <=10 && inventory> 0">Almost sold out <strong>{{inventory}}</strong>
+                        left!
+                    </p>
+                    <p v-else>Sold Out</p>
+                    <div>
+                        <ul>
+                            <li v-for="details in details">{{details}}</li>
+                        </ul>
+                    </div>
+
+                    <strong>Sizes :</strong>
+                    <div style="display: inline-block;" v-for="size in sizes">
+                        <p
+                            style="border: 1px solid gray; width: calc(280px/4 ); text-align: center; padding: 5px 2px;margin-right: 5px;">
+                            {{size}}</p>
+                    </div>
+                </div>
+                <div>
+                  <button v-on:click="addToCart" :disabled="!inStock || !onSale" :class="{disabledButton: !inStock || !onSale}"
+                  class="cart-btn"> + Add to Cart</button>
+                  </div>
+                  
+                  <div>
+                   <button v-on:click="removeFromCart" class="cart-btn" style="float:right;background: #d91e18;"
+                  >- Remove</button>  
+                  </div>
+            </div>
+        </div>
+      </section>
+`,
   data() {
     return {
       app_name: "Shopping list",
@@ -41,17 +107,19 @@ var app = new Vue({
           variantQuantity: 10
         }
       ],
-      sizes: ["small", "medium", "large", "xxl"],
-      cart: 0
+      sizes: ["small", "medium", "large", "xxl"]
     }
   },
   methods: {
-    addToCart: function () {
-      this.cart += 1;
-    },
     updateProduct: function (index) {
       this.selectedVariant = index
-    }
+    },
+    addToCart: function () {
+      this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
+    },
+    removeFromCart: function () {
+      this.$emit('remove-from-cart', this.variantId)
+    },
   },
   computed: {
     title() {
@@ -62,6 +130,39 @@ var app = new Vue({
     },
     onSale() {
       return this.variants[this.selectedVariant].variantQuantity
+    },
+    shipping() {
+      if (this.premium) {
+        return "Free"
+      }
+      return 2.99 + '$'
     }
   },
+
+})
+
+
+
+var app = new Vue({
+  el: "#app",
+  data: {
+    premium: true,
+    shipping: true,
+    cart: [],
+    remove_from_cart: []
+  },
+  methods: {
+    updateCart(id) {
+      this.cart.push(id)
+      console.log(id)
+    },
+    removeFromCart(id) {
+      this.cart.pop(id)
+    }
+  },
+
+  components: {
+    'header': header
+  }
+
 });

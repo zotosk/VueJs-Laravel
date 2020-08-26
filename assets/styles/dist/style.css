@@ -15,7 +15,6 @@ html {
 #app h1 {
   padding: 50px;
   margin: 0;
-  border-top: 5px solid #a928ff;
 }
 #app .container {
   padding: 2rem;
@@ -71,17 +70,16 @@ html {
   outline: none;
   outline-color: none;
 }
-#app .add-to-cart {
-  background: #f3f3f3;
+#app .cart {
+  background: #f5f5f5;
   color: #3a3a3a;
   box-shadow: none;
   text-shadow: none;
-  padding: 20px 35px;
-  margin-right: 10px;
+  padding: 10px 30px;
   float: right;
-  width: 100px;
+  border: 2px solid gray;
 }
-#app .add-to-cart:hover {
+#app .cart:hover {
   background: #f3f3f3;
   cursor: default;
 }

@@ -11,61 +11,13 @@
 
 <body>
     <div id="app">
-        <h1>{{app_name.toLocaleUpperCase()}}</h1>
-        <div class="container">
-            <div class="product-image item">
-                <img v-bind:src="image" width="250" height="250">
-                <p>
-                    <a v-bind:href="product_link">Link</a>
-                </p>
-
-                <p>Colors</p>
-                <div style="display: inline-block;padding:5px; margin: 10px;" v-for="(variant, index ) in variants"
-                    :key="variant.variantId" class="color-box" :style="{backgroundColor: variant.variantColor }"
-                    @mouseover="updateProduct(index)">
-                    <small style="position: relative; top: -25px;"> #{{variant.variantId}}</small>
-                </div>
-            </div>
-
-            <div class="product-header item">
-                <p class="prd-name">{{title}}</p>
-                <p style="text-align: left;">Product Code : {{product_code}}</p>
-                <div class="product-desc">
-                    <a class="badge-link" href="#" title="Men's Workout &amp; Training Shirts">
-                        <i class="best-seller-badge">#1 Best Seller</i>
-                        <span class="cat-name"> in Men's Workout &amp; Training Shirts</span>
-                    </a>
-                    <div>
-                        <small>{{product_description}} : </small>
-                        <span v-if="onSale">Product On Sale!</span>
-                        <span v-else style="color:red;">Product not available</span>
-                    </div>
-                    <p v-if="inventory > 10" :class="{lineThrough: !onSale}">In Stock</p>
-                    <p v-else-if=" inventory <=10 && inventory> 0">Almost sold out <strong>{{inventory}}</strong>
-                        left!
-                    </p>
-                    <p v-else>Sold Out</p>
-                    <div>
-                        <ul>
-                            <li v-for="details in details">{{details}}</li>
-                        </ul>
-                    </div>
-
-                    <strong>Sizes :</strong>
-                    <div style="display: inline-block;" v-for="size in sizes">
-                        <p
-                            style="border: 1px solid gray; width: calc(285px/4 ); text-align: center; padding: 5px 2px;margin-right: 5px;">
-                            {{size}}</p>
-                    </div>
-                </div>
-
-                <button v-on:click="addToCart" :disabled="!inStock || !onSale"
-                    :class="{disabledButton: !inStock || !onSale}" class="cart-btn">Add to Cart</button>
-                <div class="add-to-cart">
-                    <p style="margin:0">Cart ({{cart}})</p>
-                </div>
-            </div>
+        <div class="cart">
+            <p>My Cart ({{ cart.length }})</p>
         </div>
+
+        <h1>Shopping List</h1>
+        <product :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeFromCart"></product>
+
     </div>
 
     <script src="app.js"></script>

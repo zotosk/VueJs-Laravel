@@ -30,7 +30,6 @@ html {
     h1 {
         padding: 50px;
         margin: 0;
-        border-top: 5px solid $product-name;
     }
 
     .container {
@@ -97,18 +96,17 @@ html {
         outline-color: none;
     }
 
-    .add-to-cart {
-        background: #f3f3f3;
+    .cart {
+        background: #f5f5f5;
         color: $header-color;
         box-shadow: none;
         text-shadow: none;
-        padding: 20px 35px;
-        margin-right: 10px;
+        padding: 10px 30px;
         float: right;
-        width: 100px;
+        border: 2px solid gray;
     }
 
-    .add-to-cart:hover {
+    .cart:hover {
         background: #f3f3f3;
         cursor: default;
     }
